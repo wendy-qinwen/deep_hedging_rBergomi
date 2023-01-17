@@ -16,7 +16,7 @@ intitalizer_dict = {
 bias_initializer = he_uniform()
 
 num_inputs = 2
-num_hiddens = 10
+num_hiddens = 5
 num_outputs = 1
 batch_size = 400
 
