@@ -16,7 +16,7 @@ intitalizer_dict = {
 bias_initializer = he_uniform()
 
 num_inputs = 2
-num_hiddens = 5
+num_hiddens = 10
 num_outputs = 1
 batch_size = 400
 
@@ -74,6 +74,12 @@ class Strategy_Layer(tf.keras.layers.Layer):
         H = Z * K.reshape(H, (-1, 1, num_hiddens)) + (1 - Z) * H_tilda
 
         Y = tf.matmul(H, W_hq) + b_q
+        # print("input reshape = x :",X.shape)
+        # print("z shape is ",Z.shape)
+        # print("R shape is ",R.shape )
+        # print("H_title shape is ", H_tilda.shape)
+        # print("H shape is ", H.shape)
+        # print("Y shape is ", Y.shape)
 
 
         return K.reshape(Y, (batch_size, 1))
